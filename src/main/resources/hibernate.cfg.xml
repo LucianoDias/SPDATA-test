@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+        "-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+        "http://www.hibernate.org/dtd/hibernate-configuration-3.0.dtd">
+
+<hibernate-configuration>
+    <session-factory>
+        <!-- Database connection settings -->
+        <property name="connection.driver_class">com.mysql.jdbc.Driver</property>
+        <property name="connection.url">jdbc:mysql://127.0.0.1:3306/drogaria</property>
+        <property name="connection.username">LoopDias</property>
+        <property name="connection.password">programar</property>
+
+        <!-- Pool de Conexões -->
+        <property name="connection.pool_size">1</property>
+
+        <!-- SQL dialect -->
+        <property name="dialect">org.hibernate.dialect.MySQL5InnoDBDialect</property>
+
+        <!-- Enable Hibernate's automatic session context management -->
+        <property name="current_session_context_class">thread</property>
+
+        <!-- Cahce de Segundo Nivel  -->
+        <property name="cache.provider_class">org.hibernate.cache.internal.NoCacheProvider</property>
+
+        <!-- Mosatra as Sql geradas -->
+        <property name="show_sql">true</property>
+
+        <!-- Cria as tabela do banco -->
+        <property name="hbm2ddl.auto">validate</property>
+        <!-- Mapeamento das entidades -->
+        <mapping class="br.com.dev.drogaria.domain.Cidade"/>
+        <mapping class="br.com.dev.drogaria.domain.Cliente"/>
+        <mapping class="br.com.dev.drogaria.domain.Estado"/>
+        <mapping class="br.com.dev.drogaria.domain.Fabricante"/>
+        <mapping class="br.com.dev.drogaria.domain.Funcionario"/>
+        <mapping class="br.com.dev.drogaria.domain.Produto"/>
+        <mapping class="br.com.dev.drogaria.domain.Pessoa"/>
+        <mapping class="br.com.dev.drogaria.domain.Venda"/>
+        <mapping class="br.com.dev.drogaria.domain.ItemVenda"/>
+        <mapping class="br.com.dev.drogaria.domain.Usuario"/>
+        
+        
+    </session-factory>
+</hibernate-configuration>
